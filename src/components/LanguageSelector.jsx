@@ -6,9 +6,9 @@ function LanguageSelector() {
   const { language, setLanguage } = useContext(LanguageContext);
 
   const languages = [
-    { code: 'en', flag: '/assets/images/002-uk.png', alt: 'English' },
-    { code: 'fa', flag: '/assets/images/003-world.png', alt: 'فارسی' },
-    { code: 'ar', flag: '/assets/images/001-flag.png', alt: 'العربية' },
+    { code: 'en', flag: './assets/images/002-uk.png', alt: 'English' },
+    { code: 'fa', flag: './assets/images/003-world.png', alt: 'فارسی' },
+    { code: 'ar', flag: './assets/images/001-flag.png', alt: 'العربية' },
   ];
 
   const handleLanguageChange = (lang) => {

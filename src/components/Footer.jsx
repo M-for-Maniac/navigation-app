@@ -7,7 +7,7 @@ function Footer() {
     <footer className="footer">
       <div className="microphone-icon">
         <img
-          src="/assets/images/back.png"
+          src="./assets/images/back.png"
           alt="Go back"
           onClick={() => window.history.back()}
           role="button"
