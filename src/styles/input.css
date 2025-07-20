@@ -1,0 +1,539 @@
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9 !important; /* Ensure body color is applied */
+  color: #333;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Container with increased min-height and padding to prevent overlap */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Full viewport height */
+  text-align: center;
+  background-color: #f9f9f9 !important; /* Ensure body color is applied */
+  padding: 5rem 1.5rem 15rem; /* Increased top/bottom padding for header/footer */
+}
+
+/* Header fixed to top of viewport */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #f9f9f9 !important; /* Matches body */
+  z-index: 100;
+}
+
+/* Logo */
+.logo img {
+  margin-right: 1.5rem;
+  width: 100px;
+  height: auto;
+}
+
+/* Language selector */
+.language-selector {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  background: #fff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.language-selector img {
+  width: 28px;
+  height: 28px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  transition: border 0.3s;
+}
+
+.language-selector img:hover {
+  border-color: #007bff;
+}
+
+.language-selector:focus-within {
+  outline: 4px solid #ffcc00;
+}
+
+/* Login section */
+.login-section {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto; /* Increased margin for better spacing */
+}
+
+/* Login buttons */
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Slightly increased for visual balance */
+}
+
+/* General button styling */
+button {
+  font-size: 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-height: 48px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: 4px solid #ffcc00;
+}
+
+/* Scan and welcome sections */
+.scan-section, .welcome-section {
+  font-size: 1.25rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto; /* Increased margin */
+}
+
+.login-section h1, .scan-section h1, .welcome-section h1 {
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* Footer fixed to bottom of viewport */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: #f9f9f9 !important; /* Matches body */
+  z-index: 100;
+}
+
+.footer > * {
+    margin-bottom: .5rem;
+}
+
+/* Microphone icon (and back button) */
+.microphone-icon img {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+.microphone-icon img:focus {
+  outline: 4px solid #ffcc00;
+}
+
+/* Text input */
+.text-prompt input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  min-height: 48px;
+}
+
+.text-prompt input:focus {
+  border-color: #007bff;
+  outline: 4px solid #ffcc00;
+}
+
+/* Emergency button */
+.emergency-button button {
+  background-color: #d9534f;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-height: 48px;
+}
+
+.emergency-button button:hover {
+  background-color: #b52a27;
+  transform: scale(1.05);
+}
+
+.emergency-button button:focus {
+  outline: 4px solid #ffcc00;
+}
+
+/* Voice input */
+.voice-input {
+  width: 100%;
+  max-width: 100%;
+  min-height: 48px;
+}
+
+.voice-input button {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.voice-input button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.voice-input button:focus {
+  outline: 4px solid #ffcc00;
+}
+
+/* Scanner icon */
+.scanner-icon {
+  width: 20%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Scanned document image */
+.scannedDoc {
+  width: 30%;
+  max-width: 256px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Functionalities section */
+.functionalities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* Increased for balance */
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+/* Destination buttons */
+.destination-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.destination-buttons button {
+  margin: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+  min-height: 48px;
+}
+
+/* Video preview */
+#previewVideo {
+  width: 50%;
+  max-width: 600px;
+  max-height: 300px;
+  margin: 1.5rem auto; /* Adjusted for better spacing */
+  display: block;
+}
+
+/* FAQ and service lists */
+.faq-list, .service-list {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.faq-item, .service-list li {
+  margin: 1.5rem 0;
+}
+
+.faq-item h2, .service-list li {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Visual banner */
+.visual-banner img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Video loading */
+.video-loading {
+  text-align: center;
+  color: #333;
+  margin: 1.5rem auto;
+  font-size: 1.25rem;
+}
+
+/* Mobile responsiveness for tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1rem 13rem; /* Adjusted for no overlap */
+    min-height: 100vh;
+  }
+
+  .header {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    background-color: #f9f9f9 !important;
+  }
+
+  .logo img {
+    width: 80px;
+    margin-right: 1rem;
+  }
+
+  .language-selector {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .language-selector img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .login-section, .scan-section, .welcome-section {
+    padding: 1.5rem;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    font-size: 1.1rem;
+  }
+
+  .login-section h1, .scan-section h1, .welcome-section h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+  }
+
+  .destination-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .destination-buttons button {
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    min-height: 44px;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: #f9f9f9 !important;
+  }
+
+  .footer > * {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin-bottom: .5rem;
+  }
+
+  .microphone-icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .text-prompt input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    min-height: 36px;
+  }
+
+  .emergency-button button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+  }
+
+  .voice-input button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scanner-icon {
+    width: 15%;
+    margin: 1.5rem auto;
+  }
+
+  .scannedDoc {
+    width: 50%;
+    max-width: 192px;
+    margin: 1.5rem auto;
+  }
+
+  #previewVideo {
+    width: 100%;
+    max-width: 400px;
+    max-height: 220px;
+    margin: 1rem auto;
+  }
+
+  .video-loading {
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 0.5rem 11rem; /* Adjusted for no overlap */
+    min-height: 100vh;
+    margin-top: 0;
+  }
+
+  .header {
+    padding: 0.5rem;
+    margin-bottom: 0;
+    gap: 0.5rem;
+    background-color: #f9f9f9 !important;
+  }
+
+  .logo img {
+    width: 70px;
+    margin-right: 0.75rem;
+  }
+
+  .language-selector {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .language-selector img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .login-section h1, .scan-section h1, .welcome-section h1 {
+    font-size: 1.25rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+  }
+
+  .destination-buttons button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+  }
+
+  .footer {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    background-color: #f9f9f9 !important;
+  }
+
+  .footer > * {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin-bottom: .5rem;
+  }
+
+  .text-prompt input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    min-height: 36px;
+  }
+
+  .emergency-button button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    min-height: 36px;
+  }
+
+  .voice-input button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scanner-icon {
+    width: 10%;
+    margin: 1rem auto;
+  }
+
+  .scannedDoc {
+    width: 60%;
+    max-width: 160px;
+    margin: 1rem auto;
+  }
+
+  #previewVideo {
+    max-width: 320px;
+    max-height: 180px;
+    margin: 0.75rem auto;
+  }
+
+  .video-loading {
+    margin: 0.75rem auto;
+    font-size: 0.875rem;
+  }
+}
