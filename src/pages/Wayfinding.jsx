@@ -33,28 +33,28 @@ function Wayfinding() {
         <div className="destination-buttons">
           <button
             id="destination1"
-            onClick={() => playPreview('/assets/video/departure.mp4')}
+            onClick={() => playPreview('./assets/video/departure.mp4')}
             aria-label="Navigate to Gate A"
           >
             {translations[language].wayfinding.destination1}
           </button>
           <button
             id="destination2"
-            onClick={() => playPreview('/assets/video/departure.mp4')}
+            onClick={() => playPreview('./assets/video/departure.mp4')}
             aria-label="Navigate to Gate B"
           >
             {translations[language].wayfinding.destination2}
           </button>
           <button
             id="destination3"
-            onClick={() => playPreview('/assets/video/info.mp4')}
+            onClick={() => playPreview('./assets/video/info.mp4')}
             aria-label="Navigate to Information Desk"
           >
             {translations[language].wayfinding.destination3}
           </button>
           <button
             id="destination4"
-            onClick={() => playPreview('/assets/video/exit.mp4')}
+            onClick={() => playPreview('./assets/video/exit.mp4')}
             aria-label="Navigate to Exit"
           >
             {translations[language].wayfinding.destination4}

@@ -13,7 +13,7 @@ function VoiceInput() {
   return (
     <div className="microphone-icon">
       <img
-        src="/assets/images/002-microphone-black-shape.png"
+        src="./assets/images/002-microphone-black-shape.png"
         alt="Microphone"
         className="w-10 h-10 cursor-pointer"
         onClick={() => startVoiceRecognition(language, navigate, setVideo, resetVideo)}

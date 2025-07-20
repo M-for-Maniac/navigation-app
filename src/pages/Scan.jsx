@@ -30,7 +30,7 @@ function Scan() {
         {!isScanning && !showResult && (
           <>
             <p className="text-base mb-4">{translations[language].scan.instructions}</p>
-            <img src="/assets/images/001-scanner.png" alt="Scanner" className="scanner-icon my-6 mx-auto" />
+            <img src="./assets/images/001-scanner.png" alt="Scanner" className="scanner-icon my-6 mx-auto" />
             <button
               onClick={simulateScan}
               className="text-xl bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 focus:outline focus:outline-yellow-400"

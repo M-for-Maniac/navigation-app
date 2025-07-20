@@ -31,28 +31,28 @@ function Services() {
         <div className="destination-buttons">
           <button
             id="service1"
-            onClick={() => playPreview('/assets/video/wheelchair.mp4')}
+            onClick={() => playPreview('./assets/video/wheelchair.mp4')}
             aria-label="Request Wheelchair"
           >
             {translations[language].services.service1}
           </button>
           <button
             id="service2"
-            onClick={() => playPreview('/assets/video/pray.mp4')}
+            onClick={() => playPreview('./assets/video/pray.mp4')}
             aria-label="Navigate to Prayer Room"
           >
             {translations[language].services.service2}
           </button>
           <button
             id="service3"
-            onClick={() => playPreview('/assets/video/police.mp4')}
+            onClick={() => playPreview('./assets/video/police.mp4')}
             aria-label="Contact Police"
           >
             {translations[language].services.service3}
           </button>
           <button
             id="service4"
-            onClick={() => playPreview('/assets/video/restroom.mp4')}
+            onClick={() => playPreview('./assets/video/restroom.mp4')}
             aria-label="Navigate to Restroom"
           >
             {translations[language].services.service4}
