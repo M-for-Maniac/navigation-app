@@ -1,5 +1,5 @@
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserHashRouter as HashRouter, Routes, Route } from 'react-HashRouter-dom';
 import { LanguageProvider } from './utils/LanguageContext';
 import { VideoProvider } from './utils/VideoContext';
 import Home from './pages/Home';
@@ -9,12 +9,13 @@ import Wayfinding from './pages/Wayfinding';
 import Services from './pages/Services';
 import FAQ from './pages/FAQ';
 import './styles/output.css';
+import { HashRouter } from 'react-router-dom';
 
 function App() {
   return (
     <LanguageProvider>
       <VideoProvider>
-          <Router>
+          <HashRouter>
             <div className="min-h-screen bg-gray-100 text-gray-800 font-sans">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/faq" element={<FAQ />} />
               </Routes>
             </div>
-          </Router>
+          </HashRouter>
       </VideoProvider>
     </LanguageProvider>
   );
