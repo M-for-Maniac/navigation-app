@@ -1,4 +1,4 @@
-// src/pages/Scan.jsx
+// src/components/Scan.jsx
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
@@ -16,48 +16,58 @@ function Scan() {
     setIsScanning(true);
     setTimeout(() => {
       const detectedLang = detectLanguageFromScan();
-      setLanguage(detectedLang); // Update context
+      setLanguage(detectedLang);
       setIsScanning(false);
       setShowResult(true);
     }, 3000);
   };
 
   return (
-    <div className="container flex flex-col items-center justify-center min-h-[70vh] text-center p-4">
+    <div className="container flex flex-col items-center justify-center text-center p-4">
       <Header />
-      <div className="scan-section bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <h1 className="text-blue-500 mb-4 text-2xl">{translations[language].scan.title}</h1>
+      <div className="scan-section">
+        <h1 className="text-blue-500 mb-4 text-2xl">{translations[language]?.scan?.title || 'Scan Your ID Card'}</h1>
         {!isScanning && !showResult && (
-          <>
-            <p className="text-base mb-4">{translations[language].scan.instructions}</p>
-            <img src="./assets/images/001-scanner.png" alt="Scanner" className="scanner-icon my-6 mx-auto" />
+          <div className="scanned-result flex flex-col items-center mt-5">
+            <p className="text-base mb-4">{translations[language]?.scan?.instructions || 'Please place your ID card on the scanner below to log in.'}</p>
+            <img
+              src="./assets/images/scanner.png" // Updated path
+              alt="Scanner"
+              className="scannedDoc w-[20%] mb-5"
+              onError={(e) => {
+                console.error('Failed to load /images/001-scanner.png');
+                e.target.src = '/images/placeholder.png';
+              }}
+            />
             <button
               onClick={simulateScan}
-              className="text-xl bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 focus:outline focus:outline-yellow-400"
               aria-label="Start Scanning"
             >
-              {translations[language].scan.scanButton}
+              {translations[language]?.scan?.scanButton || 'Start Scanning'}
             </button>
-          </>
+          </div>
         )}
         {isScanning && (
-          <div className="scanning-animation text-blue-500 text-xl mt-5">
-            {translations[language].scan.scanningAnimation}
+          <div className="scanning-animation text-blue-500 text-xl mt-5 flex justify-center">
+            {translations[language]?.scan?.scanningAnimation || 'Scanning, please wait...'}
           </div>
         )}
         {showResult && (
           <div className="scanned-result flex flex-col items-center mt-5">
             <img
-              src="/assets/images/WhatsApp Image 2025-02-16 at 12.11.16 PM.jpeg"
+              src="./assets/images/scan.png" // Updated path
               alt="Scanned Document"
-              className="scannedDoc w-[30%] mb-5"
+              className="scannedDoc w-[20%] mb-5"
+              onError={(e) => {
+                console.error('Failed to load /images/WhatsApp Image 2025-02-16 at 12.11.16 PM.jpeg');
+                e.target.src = '/images/placeholder.png';
+              }}
             />
             <button
               onClick={() => navigate('/guest')}
-              className="proceed-button text-xl bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline focus:outline-yellow-400"
               aria-label="Proceed"
             >
-              {translations[language].scan.proceedButton}
+              {translations[language]?.scan?.proceedButton || 'Proceed'}
             </button>
           </div>
         )}

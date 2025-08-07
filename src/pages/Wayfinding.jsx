@@ -18,7 +18,6 @@ function Wayfinding() {
     setVideo({ src: videoFile, isVisible: true });
   };
 
-  // Auto-scroll to video when it opens
   useEffect(() => {
     if (video.isVisible && video.src && videoRef.current) {
       videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -26,10 +25,10 @@ function Wayfinding() {
   }, [video.src, video.isVisible]);
 
   return (
-    <div className="container">
+    <div className="container flex flex-col items-center justify-center text-center p-4">
       <Header />
-      <main>
-        <h1 className="welcome-section">{translations[language].wayfinding.title}</h1>
+      <main className="welcome-section">
+        <h1 className="text-blue-500 mb-4 text-2xl">{translations[language].wayfinding.title}</h1>
         <div className="destination-buttons">
           <button
             id="destination1"

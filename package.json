@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tailwind": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css",
+    "tailwind": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch",
     "start": "electron .",
     "dist": "electron-builder",
     "predeploy": "npm run build",

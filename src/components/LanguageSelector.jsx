@@ -1,4 +1,3 @@
-// src/components/LanguageSelector.jsx
 import { useContext } from 'react';
 import { LanguageContext } from '../utils/LanguageContext';
 
@@ -12,23 +11,35 @@ function LanguageSelector() {
   ];
 
   const handleLanguageChange = (lang) => {
-    setLanguage(lang); // Update context
-    localStorage.setItem('selectedLanguage', lang); // Persist to localStorage
+    setLanguage(lang);
+    localStorage.setItem('selectedLanguage', lang);
+  };
+
+  const handleKeyPress = (e, lang) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      handleLanguageChange(lang);
+    }
   };
 
   return (
-    <div className="language-selector flex items-center bg-white border-2 border-blue-500 rounded-md p-1.5 cursor-pointer">
+    <div
+      className="language-selector flex items-center bg-white border-2 border-blue-500 rounded-md p-1.5"
+      role="listbox"
+      aria-label="Select language"
+    >
       {languages.map(({ code, flag, alt }) => (
         <img
           key={code}
           src={flag}
           alt={alt}
-          className={`w-6 h-6 mx-1.5 rounded-full border-2 transition-colors ${
+          className={`w-6 h-6 mx-1.5 rounded-full border-2 transition-colors cursor-pointer ${
             language === code ? 'border-blue-500' : 'border-transparent'
           }`}
           onClick={() => handleLanguageChange(code)}
-          role="button"
-          aria-label={`Select ${alt} language`}
+          onKeyDown={(e) => handleKeyPress(e, code)}
+          role="option"
+          aria-selected={language === code}
+          tabIndex={0}
         />
       ))}
     </div>

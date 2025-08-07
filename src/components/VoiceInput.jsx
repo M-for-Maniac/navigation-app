@@ -13,12 +13,21 @@ function VoiceInput() {
   return (
     <div className="microphone-icon">
       <img
-        src="./assets/images/002-microphone-black-shape.png"
+        src="./assets/images/002-microphone-black-shape.png" // Updated path
         alt="Microphone"
-        className="w-10 h-10 cursor-pointer"
+        className="w-10 h-10 cursor-pointer bg-transparent"
         onClick={() => startVoiceRecognition(language, navigate, setVideo, resetVideo)}
-        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            startVoiceRecognition(language, navigate, setVideo, resetVideo);
+          }
+        }}
         aria-label="Start voice recognition"
+        onError={(e) => {
+          console.error('Failed to load /images/002-microphone-black-shape.png');
+          e.target.src = '/images/placeholder.png'; // Fallback image
+        }}
       />
     </div>
   );
